@@ -24,7 +24,7 @@ app.use(cors());
 
 
 app.get("/", (req, res) => {
-
+res.json("hi")
 });
 app.post("/signin", sigin.handleSigin(postgres, bcrypt));
 app.post("/register", register.handleRegister(postgres, bcrypt));
