@@ -30,6 +30,6 @@ app.post("/signin", sigin.handleSigin(postgres, bcrypt));
 app.post("/register", register.handleRegister(postgres, bcrypt));
 app.get("/profile/:id", profile.handleProfile(postgres));
 app.put("/image", image.handleImage(postgres));
-app.listen(3000, () => {
+app.listen(process.env.PORT || 3000, () => {
   console.log("yo pal");
 });
