@@ -18,14 +18,24 @@ const image = require("./controllers/image");
 //     database: "smart-brain",
 //   },
 // });
+// const postgres = knex({
+//   client: "pg",
+//   connection: "postgresql://smart_brain_db_syv4_user:pjCqEdSF9P2rPhDD5qjrB6hvQYhFjkHUF@dpg-cs3vd2bv2p9s73em51h0-a/render.com:5432/smart_brain_db_syv4", 
+//   ssl: {
+//     rejectUnauthorized: false, // Required for secure connection to Render
+//   },
+// });
 const postgres = knex({
   client: "pg",
-  connection: "postgresql://smart_brain_db_syv4_user:pjCqEdSF9P2rPhDD5qjrB6hvQYhFjkHUF@dpg-cs3vd2bv2p9s73em51h0-a/render.com:5432/smart_brain_db_syv4", 
-  ssl: {
-    rejectUnauthorized: false, // Required for secure connection to Render
+  connection: {
+    host: "dpg-cs3vd2bv2p9s73em51h0-a.render.com",  // Render database host
+    port: 5432,  // Default PostgreSQL port
+    user: "smart_brain_db_syv4_user",  // Database username
+    password: "pjCqEdSF9P2rPhDD5qjrB6hvQYhFjkHUF",  // Database password
+    database: "smart_brain_db_syv4",  // Database name
+    ssl: { rejectUnauthorized: false },  // Required for Render connection
   },
 });
-
 app.use(bodyParser.json());
 app.use(cors());
 
