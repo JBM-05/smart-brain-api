@@ -28,7 +28,7 @@ const image = require("./controllers/image");
 const postgres = knex({
   client: "pg",
   connection: {
-    host: "dpg-cs3vd2bv2p9s73em51h0-a.render.com",  // Render database host
+    host: "dpg-cs3vd2bv2p9s73em51h0-a.oregon-postgres.render.com",  // Render database host
     port: 5432,  // Default PostgreSQL port
     user: "smart_brain_db_syv4_user",  // Database username
     password: "pjCqEdSF9P2rPhDD5qjrB6hvQYhFjkHUF",  // Database password
