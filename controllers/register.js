@@ -12,7 +12,7 @@ const handleRegister=(postgres,bcrypt)=>(req, res) => {
         trx
           .insert({
             email: email,
-            hash: hash,
+            hash: password,
           })
           .into("login")
           .returning("email")
