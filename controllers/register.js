@@ -1,3 +1,4 @@
+
 const saltRounds = 10;
 const handleRegister=(postgres,bcrypt)=>(req, res) => {
     const { name, email, password } = req.body;
