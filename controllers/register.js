@@ -46,7 +46,7 @@ const handleRegister = (postgres, bcrypt) => async (req, res) => {
 
   try {
     const hash = bcrypt.hashSync(password, saltRounds);
-
+console.log(hash)
     await postgres.transaction(async (trx) => {
       const loginEmail = await trx("login")
         .insert({
